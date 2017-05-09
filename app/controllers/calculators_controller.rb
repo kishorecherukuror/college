@@ -1,8 +1,6 @@
 class CalculatorsController < ApplicationController
   def addition
-  	@a = 20
-  	@b = 30
-  	@c = @a + @b
+      @addition = params[:a].to_i + params[:y].to_i
   end
 
   def subtraction

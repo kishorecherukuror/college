@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'calculators/addition'
+  post 'calculators/addition'
 
   get 'calculators/subtraction'
 

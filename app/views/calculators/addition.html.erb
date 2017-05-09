@@ -1,3 +1,15 @@
 <h1>Addition</h1>
 
-<%= @a %> + <%= @b %> = <%= @c %>
+<%= form_tag do %>
+
+<p><%= label_tag 'Enter value' %>
+<%= text_field_tag 'a' %> </p>
+<p>
+<%= label_tag 'Enter Value' %>
+<%= text_field_tag 'y' %></p>
+
+<%= submit_tag "Addition" %>
+
+<% end %>
+
+Output: <%= @addition %>
