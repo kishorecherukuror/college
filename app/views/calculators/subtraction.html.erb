@@ -1,2 +1,15 @@
-<h1>Calculators#subtraction</h1>
-<p>Find me in app/views/calculators/subtraction.html.erb</p>
+<h1>Addition</h1>
+
+<%= form_tag calculators_subtraction_path do %>
+
+<p><%= label_tag 'Enter value' %>
+<%= text_field_tag 'a' %> </p>
+<p>
+<%= label_tag 'Enter Value' %>
+<%= text_field_tag 'y' %></p>
+
+<%= submit_tag "subtraction" %>
+
+<% end %>
+
+Output: <%= @subtraction %>

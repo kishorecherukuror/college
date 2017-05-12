@@ -1,5 +1,23 @@
-<h1>This is my first page</h1>
+<h1>Student Information</h1>
 
-<p>Name: <%= @name %></p>
-<p>Age:  <%= @age %></p>
-<p>Address: <%= @address %></p>
+<%= form_tag do %>
+
+<p>Name : <%= text_field_tag :name %> </p>
+<p>DOB  : <%= date_field_tag :dob %></p>
+<p>Age  : <%= number_field_tag :age , '1' ,  min: 1, max: 60 %></p>
+<p>Address : <%= text_area_tag :address,nil %></p>
+
+<p>Gender : Male <%= radio_button_tag 'gender', 'male' %>
+ 		 	Female <%= radio_button_tag 'gender', 'female' %>
+ </p>
+<p><%= submit_tag %></p>
+
+<% end %>
+
+<h2>Student Information</h2>
+
+Name : <%= @name %><br />
+DOB : <%= @dob %><br />
+Age  : <%= @age %><br />
+Address : <%= @address %><br />
+Gender : <%= @gender %><br />

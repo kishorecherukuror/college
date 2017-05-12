@@ -1,7 +1,18 @@
 class StudentsController < ApplicationController
 	def create
-		@name = "uday"
-		@age = 98
-		@address = "vijayawada"
+		if params[:name]
+			@student = Student.new(name: params[:name],
+				age: params[:age], dob: params[:dob],
+				address: params[:address],gender: params[:gender])
+			if @student.save
+				redirect_to students_index_path
+			else
+				render 'create'
+			end
+		end
+	end
+
+	def index
+		@students = Student.all
 	end
 end
