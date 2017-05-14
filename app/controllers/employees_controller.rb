@@ -15,6 +15,15 @@ class EmployeesController < ApplicationController
   	end
   end
 
+  def show
+    # params.inspect
+      @employee = Employee.find(params[:id])
+  end
+
+  def edit
+      @employee = Employee.find(params[:id])
+  end
+
   def index
   	@employees = Employee.all
   end

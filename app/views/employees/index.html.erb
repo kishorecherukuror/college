@@ -1,3 +1,25 @@
 <%= @employees.inspect %>
-puts "krishna"
-puts "JSK"
+
+
+<h1>INDEX PAGE</h1>
+<table>
+  <tr>
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>SALARY</th>
+    <th>STATUS</th>
+  </tr>
+ 
+  <% @employees.each do |employee| %>
+    <tr>
+      <td><%= employee.name %></td>
+      <td><%= employee.age %></td>
+      <td><%= employee.salary %></td>
+      <td><%= employee.status %></td>
+     
+      <td><%= link_to 'Show', employees_show_path %></td>
+      <td><%= link_to 'Edit', employees_edit_path %></td>
+      <td><%#= link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+</table>

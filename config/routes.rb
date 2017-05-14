@@ -4,14 +4,20 @@ Rails.application.routes.draw do
   get 'employees/create'
   post 'employees/create'
 
+  get 'employees/show'
+
+  get 'employees/edit'
+  post 'employees/edit'
   get 'employees/index'
 
-  get 'calculators/addition'
+  get 'calculators/add'
 
-  get 'calculators/subtraction'
-  post 'calculators/subtraction'
+  get 'calculators/sub'
+  post 'calculators/sub'
 
-  get 'calculators/division'
+  get 'calculators/mul'
+  
+  get 'calculators/div'
 
 	get "students/create"
 	post "students/create"

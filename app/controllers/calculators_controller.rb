@@ -1,12 +1,17 @@
 class CalculatorsController < ApplicationController
-  def addition
-      @addition = params[:a].to_i + params[:y].to_i
+  def add
+    @add = params[:a].to_i + params[:b].to_i
   end
 
-  def subtraction
-  	  @subtraction = params[:a].to_i - params[:y].to_i
+  def sub
+  	@sub = params[:a].to_i - params[:b].to_i
   end
 
-  def division
+  def mul
+  	@mul = params[:a].to_i * params[:b].to_i
+  end
+
+  def div
+  	@div = params[:a].to_i / params[:b].to_i
   end
 end
