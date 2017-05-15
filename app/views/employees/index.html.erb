@@ -1,1 +1,22 @@
-<%= @employees.inspect %>
+<table>
+<tr>
+	<th>Name</th>
+	<th>Age </th>
+	<th>salary</th>
+	<th>Status</th>
+	<th>Actions</th>
+</tr>
+<% @employees.each do |emp| %>
+	<tr>
+		<td><%= emp.name %></td>
+		<td><%= emp.age %></td>
+		<td><%= emp.salary %></td>
+		<td><%= emp.status %></td>
+		<td><%= link_to	"show", kishore_path(emp) %>
+			<%= link_to "destroy" , destroy_path(emp),
+			:method => "delete", data: {confirm: "Are you sure?"} %>
+			<%= link_to "edit", edit_path(emp) %>
+		</td>
+	</tr> 
+<% end %>
+</table>
