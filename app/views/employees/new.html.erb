@@ -1,10 +1,15 @@
 
 <%= form_for @employee, url: {action: "create"} do |f| %>
-<p>
-Name: <%= f.text_field :name %></p>
-<p>Age: <%= f.number_field :age %> </p>
-<p>Salary: <%= f.number_field :salary %></p>
-<p>Status: <%= f.text_field :status %></p>
+<% if @employee.errors.present? %>
+<div class="errors">
+	<p><%= @employee.errors.count %> errors triggered</p>
+	<% @employee.errors.full_messages.each do |error| %>
+		<%= error %><br />
+	<% end %>
+</div>
+<% end %>
+
+<%= render partial: "form", locals: {f: f} %>
 
 <p> <%= f.submit %></p>
 <% end %>

@@ -1,9 +1,7 @@
 <%= form_for @employee , url: {action: "update"} do |f| %>
 
-<p>Name: <%= f.text_field :name %></p>
-<p>Age: <%= f.number_field :age %> </p>
-<p>Salary: <%= f.number_field :salary %></p>
-<p>Status: <%= f.text_field :status %></p>
+<%= render partial: "form", locals: {f: f} %>
+
 <p><%= hidden_field_tag :id , @employee.id %></p>
 
 <p> <%= f.submit %></p>
